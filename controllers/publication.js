@@ -5,6 +5,8 @@ var fs = require('fs');
 var moment = require('moment');
 var mongoosePaginate = require('mongoose-pagination');
 
+var geodist = require('geodist');
+
 var Publication = require('../models/publication');
 var User = require('../models/user');
 
@@ -182,6 +184,35 @@ function getImageFile(req, res){
         }
     });
 }
+
+/*
+
+function getPublications(req, res){}
+
+
+function getPublicationByPosition(req, res){
+    var mobileLocation = req.params.mobilePosition // {lat: 41.85, lon: -87.65}
+    var visiblepublications = [];
+    var publications = getAllPublications();//for city¿?
+
+    for(publication in publications){
+        var publicationLocation = {lat:99.7489, lon: -84.3881}//getpublications().getLatitude + getLongitude
+        if(isInRange(mobileLocation,publicationLocation)){
+            visiblepublications.push(publication);
+        }
+    }
+
+    res.status(200).send({
+        message: visiblepublications
+    });
+
+}
+
+function isInRange(mobileLocation, publicationLocation){
+    if (geodist(mobileLocation, publicationLocation, {exact: true, unit: 'km'}) < publication.range){
+        visualicepublication();
+    }
+}*/
 
 module.exports ={
     savePublication,
