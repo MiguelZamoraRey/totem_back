@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start:dev": "nodemon index.js",
-        "start:debug": "nodemon --inspect-brk=localhost:3000 index.js"
+        "start:debug": "nodemon debug index.js"
     },
     "author": "mzrdeveloper",
     "license": "MIT",

@@ -227,8 +227,6 @@ function loginUser(req,res){
     
     var email = params.email;
     var password = params.password;
-
-    debugger;
     
     //clausula and en mongo
     //comprobamos solo el mail ya que la contraseña esta cifrada
@@ -294,7 +292,7 @@ function uploadImage(req, res){
            file_extension == "jpeg" ||
            file_extension == "gif"){
 
-            User.findByIdAndUpdate(userId, {image: file_name}, {new:true}, (err, userUpdated)=>{
+            User.findByIdAndUpdate(userId, {avatar: file_name}, {new:true}, (err, userUpdated)=>{
                 //error
                 if(err){
                     return res.status(500).send({

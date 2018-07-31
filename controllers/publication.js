@@ -13,9 +13,9 @@ var User = require('../models/user');
 function savePublication(req, res){
     var params = req.body;
     
-    if(!params.text){
+    if(!params.description){
         return res.status(200).send({
-            message: "The publication need text param"
+            message: "The publication need description param"
         })
     }
 
@@ -125,7 +125,7 @@ function uploadImage(req, res){
 
             Publication.findOne({'user':req.user.sub, '_id':publication_id}).exec((err,publication)=>{
                 if (publication){
-                    Publication.findByIdAndUpdate(publication_id, {file: file_name}, {new:true}, (err, publicationUpdated)=>{
+                    Publication.findByIdAndUpdate(publication_id, {photo: file_name}, {new:true}, (err, publicationUpdated)=>{
                         //error
                         if(err){
                             return res.status(500).send({
