@@ -9,7 +9,7 @@ var port = 3800;
 mongoose.Promise = global.Promise;
 mongoose.connect(
     'mongodb://localhost:27017/totem-back', 
-    {useMongoClient:true}
+    //{useMongoClient:true}
 ).then(()=>{
     console.log("Succesfully conection with BBDD");
     //si se conecta a la bbdd crea el server

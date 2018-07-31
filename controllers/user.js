@@ -101,9 +101,13 @@ function getImageFile(req, res){
 function updateUser(req,res){
     var userId = req.params.id;
     var update = req.body;
-    
+
     //borramos la prop password
     delete update.password;
+    console.log(req.user);
+    debugger;
+    console.log("userId: " +userId);
+    console.log("req.user.sub: "+ req.user.sub);
     
     if(userId != req.user.sub){
         return res.status(500).send({
@@ -223,6 +227,8 @@ function loginUser(req,res){
     
     var email = params.email;
     var password = params.password;
+
+    debugger;
     
     //clausula and en mongo
     //comprobamos solo el mail ya que la contraseña esta cifrada

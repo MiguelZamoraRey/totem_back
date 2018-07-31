@@ -5,7 +5,7 @@ var fs = require('fs');
 var moment = require('moment');
 var mongoosePaginate = require('mongoose-pagination');
 
-var geodist = require('geodist');
+//var geodist = require('geodist');
 
 var Publication = require('../models/publication');
 var User = require('../models/user');
