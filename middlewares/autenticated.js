@@ -21,7 +21,6 @@ exports.ensureAuth = function (req, res, next){
         //debugger;
         //decode
         var payload = jwt.decode(token, secret);
-        console.log("Payload:"+payload);
 
         //expired?
         if(payload.exp <= moment.unix()){

@@ -104,10 +104,6 @@ function updateUser(req,res){
 
     //borramos la prop password
     delete update.password;
-    console.log(req.user);
-    debugger;
-    console.log("userId: " +userId);
-    console.log("req.user.sub: "+ req.user.sub);
     
     if(userId != req.user.sub){
         return res.status(500).send({
